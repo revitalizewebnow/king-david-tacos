@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>King David Tacos | NYC's Best Breakfast Tacos | Brooklyn & LGA</title>
+  <meta name="description" content="King David Tacos (KDT) — woman-owned, Brooklyn-founded breakfast taco company. Grab-and-go breakfast tacos made with quality ingredients. Locations in Brooklyn and LaGuardia Airport. Catering, taco drops & nationwide shipping." />
+  <meta name="keywords" content="King David Tacos, KDT, breakfast tacos NYC, Brooklyn breakfast tacos, breakfast tacos Brooklyn, grab and go breakfast NYC, taco catering NYC" />
+  <meta property="og:title" content="King David Tacos | NYC's Best Breakfast Tacos" />
+  <meta property="og:description" content="Woman-owned, Brooklyn-founded breakfast taco company. The perfect grab-and-go breakfast, for anytime." />
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:url" content="https://kingdavidtacos.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://kingdavidtacos.com" />
+
+  <!-- Schema.org structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "King David Tacos",
+    "description": "Woman-owned, Brooklyn-founded breakfast taco company. The perfect grab-and-go breakfast, for anytime.",
+    "url": "https://kingdavidtacos.com",
+    "telephone": "",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "611 Bergen St",
+      "addressLocality": "Brooklyn",
+      "addressRegion": "NY",
+      "addressCountry": "US"
+    },
+    "servesCuisine": "Mexican",
+    "priceRange": "$$",
+    "sameAs": [
+      "https://instagram.com/kingdavidtacos",
+      "https://facebook.com/kingdavidtacos"
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --maroon: #8B1A1A;
+      --maroon-dark: #5E1010;
+      --maroon-light: #B82828;
+      --cream: #FAF7F2;
+      --cream-dark: #F0EBE0;
+      --black: #1A1208;
+      --warm-gray: #6B6258;
+      --gold: #C9963A;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 3rem;
+      background: rgba(250,247,242,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139,26,26,0.12);
+      transition: all 0.3s ease;
+    }
+
+    nav.scrolled {
+      padding: 0.8rem 3rem;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      list-style: none;
+    }
+
+    .nav-links > li {
+      position: relative;
+    }
+
+    .nav-links > li > a,
+    .nav-links > li > button {
+      display: block;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--black);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .nav-links > li > a:hover,
+    .nav-links > li > button:hover {
+      color: var(--maroon);
+    }
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border: 1px solid rgba(139,26,26,0.12);
+      border-radius: 8px;
+      padding: 0.5rem 0;
+      min-width: 180px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(-50%) translateY(-8px);
+      transition: all 0.2s ease;
+    }
+
+    .nav-links > li:hover .dropdown {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.875rem;
+      color: var(--black);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .dropdown a:hover {
+      background: var(--cream);
+      color: var(--maroon);
+    }
+
+    .nav-cta {
+      background: var(--maroon) !important;
+      color: var(--white) !important;
+      border-radius: 100px !important;
+      padding: 0.55rem 1.25rem !important;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--maroon-dark) !important; color: var(--white) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--black);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263576463-32E87URQJBI7GHA4K7KN/13bcd825-emilys_nyc_lizsolomondwyer_kingdavidtaco_010.jpeg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      transition: transform 8s ease;
+    }
+
+    .hero-bg.loaded { transform: scale(1); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(26,18,8,0.72) 0%, rgba(94,16,16,0.55) 60%, rgba(26,18,8,0.3) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      max-width: 800px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s forwards;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 300;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--maroon);
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 2px solid var(--maroon);
+    }
+
+    .btn-primary:hover {
+      background: var(--maroon-dark);
+      border-color: var(--maroon-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--white);
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* MARQUEE */
+    .marquee-strip {
+      background: var(--maroon);
+      color: var(--white);
+      padding: 0.8rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-inner {
+      display: inline-flex;
+      gap: 0;
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .marquee-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      padding: 7rem 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .about-text .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: 1rem;
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: var(--black);
+    }
+
+    .about-text p {
+      font-size: 1.05rem;
+      color: var(--warm-gray);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-text .btn-primary {
+      margin-top: 1.5rem;
+      color: var(--white);
+    }
+
+    .about-images {
+      position: relative;
+      height: 540px;
+    }
+
+    .about-img-main {
+      position: absolute;
+      top: 0; right: 0;
+      width: 80%;
+      height: 85%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .about-img-accent {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 55%;
+      height: 50%;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 6px solid var(--cream);
+    }
+
+    .about-badge {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: var(--maroon);
+      color: var(--white);
+      padding: 1.2rem;
+      border-radius: 12px;
+      text-align: center;
+      z-index: 3;
+      box-shadow: 0 8px 24px rgba(139,26,26,0.3);
+    }
+
+    .about-badge strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+    }
+
+    .about-badge span {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    /* MENU SECTION */
+    .menu-section {
+      background: var(--black);
+      padding: 7rem 3rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+
+    .menu-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,150,58,0.4);
+    }
+
+    .menu-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .menu-card-body {
+      padding: 1.5rem;
+    }
+
+    .menu-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .menu-price {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .vegan-badge {
+      display: inline-block;
+      background: rgba(99,153,34,0.2);
+      color: #97C459;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .menu-cta {
+      text-align: center;
+    }
+
+    /* PRESS QUOTE */
+    .press {
+      padding: 7rem 3rem;
+      background: var(--cream-dark);
+    }
+
+    .press-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--black);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    blockquote .highlight { color: var(--maroon); }
+
+    .quote-source {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+
+    .press-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .press-logo-item {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--warm-gray);
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+
+    .press-logo-item:hover { opacity: 1; }
+
+    /* ORDER SECTION */
+    .order-section {
+      padding: 7rem 3rem;
+      background: var(--cream);
+    }
+
+    .order-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .order-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .order-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .order-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(139,26,26,0.12);
+      border-color: var(--maroon);
+    }
+
+    .order-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--cream-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.2rem;
+      font-size: 1.8rem;
+    }
+
+    .order-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 0.5rem;
+    }
+
+    .order-card p {
+      font-size: 0.9rem;
+      color: var(--warm-gray);
+      line-height: 1.6;
+    }
+
+    /* LOCATIONS */
+    .locations {
+      background: var(--maroon);
+      padding: 7rem 3rem;
+      color: var(--white);
+    }
+
+    .locations-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .location-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: all 0.3s;
+    }
+
+    .location-card:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-4px);
+    }
+
+    .location-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .location-body {
+      padding: 1.5rem;
+    }
+
+    .location-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .location-card p {
+      font-size: 0.875rem;
+      opacity: 0.7;
+      line-height: 1.5;
+    }
+
+    .location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    /* GALLERY */
+    .gallery {
+      padding: 7rem 3rem;
+      background: var(--cream-dark);
+    }
+
+    .gallery-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(2, 240px);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .gallery-item:nth-child(1) { grid-column: 1/6; grid-row: 1/2; }
+    .gallery-item:nth-child(2) { grid-column: 6/9; grid-row: 1/2; }
+    .gallery-item:nth-child(3) { grid-column: 9/13; grid-row: 1/3; }
+    .gallery-item:nth-child(4) { grid-column: 1/4; grid-row: 2/3; }
+    .gallery-item:nth-child(5) { grid-column: 4/9; grid-row: 2/3; }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--black);
+      padding: 6rem 3rem;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .newsletter p {
+      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.9rem 1.25rem;
+      border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.06);
+      color: var(--white);
+      font-size: 0.95rem;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.35); }
+    .newsletter-form input:focus { border-color: rgba(255,255,255,0.4); }
+
+    /* FOOTER */
+    footer {
+      background: var(--cream-dark);
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding: 4rem 3rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand img { height: 40px; margin-bottom: 1rem; }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: var(--warm-gray);
+      line-height: 1.7;
+      max-width: 260px;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--warm-gray);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .footer-social a:hover {
+      border-color: var(--maroon);
+      color: var(--maroon);
+    }
+
+    .footer-col h4 {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 0.6rem; }
+
+    .footer-col a {
+      font-size: 0.9rem;
+      color: var(--warm-gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: var(--maroon); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      nav.scrolled { padding: 0.8rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .about { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+      .about-images { height: 380px; }
+
+      .menu-section, .press, .order-section, .locations, .gallery, .newsletter { padding: 4rem 1.5rem; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .gallery-item:nth-child(n) { grid-column: span 1; grid-row: auto; }
+      .gallery-item:nth-child(1) { grid-column: span 2; }
+
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      footer { padding: 3rem 1.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="/" class="nav-logo" aria-label="King David Tacos home">
+      <img src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/93930be1-6695-4a87-bff9-c4622c0bf27e/KDT_HORIZONTAL_LOGO_Maroon.png?format=1500w" alt="King David Tacos" />
+    </a>
+
+    <ul class="nav-links">
+      <li>
+        <button>Menu ▾</button>
+        <div class="dropdown">
+          <a href="/menus">Our Food</a>
+          <a href="/nutritioninfo">Nutrition Info</a>
+        </div>
+      </li>
+      <li>
+        <button>Order ▾</button>
+        <div class="dropdown">
+          <a href="/catering">Catering</a>
+          <a href="/tacodrops">Taco Drops</a>
+          <a href="https://order.tapmango.com/merchant/dbf4bfda-d4da-43ff-86ff-20556acbcbe1/order/location">Same-Day Delivery</a>
+        </div>
+      </li>
+      <li>
+        <button>Locations ▾</button>
+        <div class="dropdown">
+          <a href="/611bergen">HQ @ 611 Bergen</a>
+          <a href="/tacocarts">The Taco Carts</a>
+          <a href="/kdtlga">KDT @ LGA</a>
+          <a href="/retailpartners">Retail Partners</a>
+        </div>
+      </li>
+      <li>
+        <button>Merch & Gifts ▾</button>
+        <div class="dropdown">
+          <a href="/merchandise">Merch</a>
+          <a href="/giftcards">Gift Cards</a>
+        </div>
+      </li>
+      <li><a href="/press">Press</a></li>
+      <li><a href="/faqs">About</a></li>
+      <li>
+        <a href="https://order.tapmango.com/merchant/dbf4bfda-d4da-43ff-86ff-20556acbcbe1/order/location" class="nav-cta">Order Now</a>
+      </li>
+    </ul>
+
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="King David Tacos — Brooklyn breakfast tacos">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Woman-owned · Brooklyn-founded · Since 2016</span>
+      <h1>The Breakfast<br /><em>Taco</em> Done Right</h1>
+      <p class="hero-sub">High-quality, grab-and-go breakfast tacos made for New York mornings — and any time in between.</p>
+      <div class="hero-actions">
+        <a href="/menus" class="btn-primary">See the Menu</a>
+        <a href="https://order.tapmango.com/merchant/dbf4bfda-d4da-43ff-86ff-20556acbcbe1/order/location" class="btn-outline">Order Now →</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-inner">
+      <span class="marquee-item"><span class="marquee-dot"></span>Eater NY</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Grub Street</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Thrillist</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>The Infatuation</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Zagat</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Gothamist</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Ship Nationwide on Goldbelly®</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Eater NY</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Grub Street</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Thrillist</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>The Infatuation</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Zagat</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Gothamist</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>Ship Nationwide on Goldbelly®</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about reveal" aria-label="About King David Tacos">
+    <div class="about-text">
+      <p class="label">Who We Are</p>
+      <h2>Hi, y'all. We're KDT.</h2>
+      <p>We're a woman-owned, Brooklyn-founded breakfast taco company on a mission to make a high-quality, grab-and-go breakfast an easy choice for anyone.</p>
+      <p>We believe breakfast tacos are the perfect breakfast food — portable, satisfying, and endlessly delicious. Since opening our doors, we've been bringing a little bit of Texas breakfast magic to New York City.</p>
+      <a href="/faqs" class="btn-primary" style="color:#fff;">Our Story →</a>
+    </div>
+    <div class="about-images">
+      <img class="about-img-main" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263607277-W7979CD2WAA34HWNVEKP/KDT_BERGEN_EXTERIOR__0112.jpg" alt="King David Tacos Brooklyn storefront" loading="lazy" />
+      <img class="about-img-accent" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263751921-KEPPBZFITUTSV4MHLFCJ/KINGDAVID_AUG20__0368.jpg" alt="KDT breakfast tacos" loading="lazy" />
+      <div class="about-badge">
+        <strong>★ 4.8</strong>
+        <span>1,200+ reviews</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" aria-label="KDT Menu Highlights">
+    <div class="section-header reveal">
+      <span class="label">What We Make</span>
+      <h2>The Menu</h2>
+      <p>All tacos come with your choice of KDT salsa on the side. Breakfast, anytime.</p>
+    </div>
+
+    <div class="menu-grid">
+      <article class="menu-card reveal">
+        <img class="menu-card-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263763893-VFRHV6MG5XZ1R4X7YN5Z/KINGDAVID_AUG20__0346.jpg" alt="Cowboy breakfast taco" loading="lazy" />
+        <div class="menu-card-body">
+          <span class="menu-tag">Fan Favorite</span>
+          <h3>The Cowboy</h3>
+          <p>Steak, potato, egg, cheese — the classic that started it all.</p>
+          <span class="menu-price">$5.50</span>
+        </div>
+      </article>
+
+      <article class="menu-card reveal">
+        <img class="menu-card-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263576463-32E87URQJBI7GHA4K7KN/13bcd825-emilys_nyc_lizsolomondwyer_kingdavidtaco_010.jpeg" alt="Mom's Migas taco" loading="lazy" />
+        <div class="menu-card-body">
+          <span class="menu-tag">Must Try</span>
+          <h3>Mom's Migas <span class="vegan-badge">V</span></h3>
+          <p>Eggs scrambled with mom's salsa, tortilla chips, jalapeño rajas, cheese.</p>
+          <span class="menu-price">$5.50</span>
+        </div>
+      </article>
+
+      <article class="menu-card reveal">
+        <img class="menu-card-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263557454-W55PFHGT2QDCZXQE8TAP/Messineo_Patrizia_20211127_blank+street-11.jpg" alt="Queen Bean taco" loading="lazy" />
+        <div class="menu-card-body">
+          <span class="menu-tag">Vegetarian</span>
+          <h3>Queen Bean <span class="vegan-badge">V</span></h3>
+          <p>KDT's refried beans, potato, egg, cheese — hearty and satisfying.</p>
+          <span class="menu-price">$4.50</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="menu-cta reveal">
+      <a href="/menus" class="btn-primary">Full Menu →</a>
+    </div>
+  </section>
+
+  <!-- PRESS QUOTE -->
+  <section class="press reveal" aria-label="Press and reviews">
+    <div class="press-inner">
+      <blockquote>
+        "The cruel memory of all those bad breakfast tacos was wiped from my mind when I bit into a breakfast taco from <span class="highlight">King David Tacos.</span> I felt like I was standing on the edge of Barton Springs."
+      </blockquote>
+      <p class="quote-source">— Robert Sietsema, Eater NY</p>
+
+      <div class="press-logos" aria-label="Featured in">
+        <span class="press-logo-item">Eater NY</span>
+        <span class="press-logo-item">Grub Street</span>
+        <span class="press-logo-item">Thrillist</span>
+        <span class="press-logo-item">The Infatuation</span>
+        <span class="press-logo-item">Zagat</span>
+        <span class="press-logo-item">Gothamist</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section class="order-section" aria-label="Ways to order KDT">
+    <div class="order-inner">
+      <div class="section-header reveal">
+        <span class="label" style="color: var(--maroon);">Get Your KDT Fix</span>
+        <h2 style="color: var(--black);">How to Order</h2>
+        <p style="color: var(--warm-gray);">Whether you want it now or planning ahead — we've got options.</p>
+      </div>
+
+      <div class="order-cards">
+        <a href="https://order.tapmango.com/merchant/dbf4bfda-d4da-43ff-86ff-20556acbcbe1/order/location" class="order-card reveal">
+          <div class="order-icon">🛵</div>
+          <h3>Same-Day Delivery</h3>
+          <p>Order online and get fresh breakfast tacos delivered right to your door.</p>
+        </a>
+
+        <a href="/catering" class="order-card reveal">
+          <div class="order-icon">🎉</div>
+          <h3>Catering</h3>
+          <p>Feed your team, event, or crew. KDT catering brings the taco magic to you.</p>
+        </a>
+
+        <a href="/tacodrops" class="order-card reveal">
+          <div class="order-icon">📍</div>
+          <h3>Taco Drops</h3>
+          <p>Pre-order a drop to your neighborhood. Fresh tacos, community style.</p>
+        </a>
+
+        <a href="https://www.goldbelly.com/restaurants/king-david-tacos/" class="order-card reveal">
+          <div class="order-icon">📦</div>
+          <h3>Ship Nationwide</h3>
+          <p>Miss KDT? Order on Goldbelly® and we'll ship them right to your door anywhere in the US.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section class="locations" aria-label="King David Tacos locations">
+    <div class="locations-inner">
+      <div class="section-header reveal">
+        <span class="label">Find Us</span>
+        <h2>Our Locations</h2>
+        <p style="color: rgba(255,255,255,0.6);">From Brooklyn to LaGuardia — come find us.</p>
+      </div>
+
+      <div class="locations-grid">
+        <a href="/611bergen" class="location-card reveal">
+          <img class="location-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263607277-W7979CD2WAA34HWNVEKP/KDT_BERGEN_EXTERIOR__0112.jpg" alt="KDT HQ at 611 Bergen Street Brooklyn" loading="lazy" />
+          <div class="location-body">
+            <h3>HQ @ 611 Bergen</h3>
+            <p>611 Bergen St, Brooklyn, NY<br />Our flagship — where it all started.</p>
+            <span class="location-link">Get Directions →</span>
+          </div>
+        </a>
+
+        <a href="/tacocarts" class="location-card reveal">
+          <img class="location-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263938821-OJXT1E47DAQR8URJ3O2D/IMG_6727.jpg" alt="KDT Taco Carts NYC" loading="lazy" />
+          <div class="location-body">
+            <h3>The Taco Carts</h3>
+            <p>Popping up across NYC neighborhoods. Check our schedule for the latest stops.</p>
+            <span class="location-link">See Schedule →</span>
+          </div>
+        </a>
+
+        <a href="/kdtlga" class="location-card reveal">
+          <img class="location-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263763893-VFRHV6MG5XZ1R4X7YN5Z/KINGDAVID_AUG20__0346.jpg" alt="KDT at LaGuardia Airport" loading="lazy" />
+          <div class="location-body">
+            <h3>KDT @ LGA</h3>
+            <p>Catch a flight and a taco. Find us at LaGuardia Airport.</p>
+            <span class="location-link">Terminal Info →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" aria-label="King David Tacos photo gallery">
+    <div class="gallery-inner">
+      <div class="section-header reveal">
+        <span class="label" style="color: var(--maroon);">The KDT Life</span>
+        <h2 style="color: var(--black);">Follow Along</h2>
+        <p style="color: var(--warm-gray);">
+          <a href="https://instagram.com/kingdavidtacos" style="color: var(--maroon); text-decoration: none;">@kingdavidtacos</a> on Instagram
+        </p>
+      </div>
+
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <img class="gallery-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263576463-32E87URQJBI7GHA4K7KN/13bcd825-emilys_nyc_lizsolomondwyer_kingdavidtaco_010.jpeg" alt="KDT breakfast spread" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263557454-W55PFHGT2QDCZXQE8TAP/Messineo_Patrizia_20211127_blank+street-11.jpg" alt="KDT taco cart" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263607277-W7979CD2WAA34HWNVEKP/KDT_BERGEN_EXTERIOR__0112.jpg" alt="KDT Bergen storefront exterior" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263751921-KEPPBZFITUTSV4MHLFCJ/KINGDAVID_AUG20__0368.jpg" alt="KDT tacos close up" loading="lazy" />
+        </div>
+        <div class="gallery-item">
+          <img class="gallery-img" src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/1682263763893-VFRHV6MG5XZ1R4X7YN5Z/KINGDAVID_AUG20__0346.jpg" alt="KDT taco with salsa" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" aria-label="Sign up for KDT updates">
+    <h2 class="reveal">Stay in the Loop</h2>
+    <p class="reveal">Taco drops, new locations, merch launches — straight to your inbox.</p>
+    <form class="newsletter-form reveal" onsubmit="handleSubscribe(event)">
+      <input type="email" placeholder="Your email address" aria-label="Email address" required />
+      <button type="submit" class="btn-primary">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="https://images.squarespace-cdn.com/content/v1/576eb38f46c3c49b5d08ce10/93930be1-6695-4a87-bff9-c4622c0bf27e/KDT_HORIZONTAL_LOGO_Maroon.png?format=1500w" alt="King David Tacos" />
+          <p>Woman-owned, Brooklyn-founded breakfast taco company. Making quality grab-and-go breakfast easy for everyone.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/kingdavidtacos" aria-label="KDT on Instagram">IG</a>
+            <a href="https://facebook.com/kingdavidtacos" aria-label="KDT on Facebook">FB</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="/menus">Our Food</a></li>
+            <li><a href="/nutritioninfo">Nutrition Info</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Order</h4>
+          <ul>
+            <li><a href="/catering">Catering</a></li>
+            <li><a href="/tacodrops">Taco Drops</a></li>
+            <li><a href="https://order.tapmango.com/merchant/dbf4bfda-d4da-43ff-86ff-20556acbcbe1/order/location">Delivery</a></li>
+            <li><a href="https://www.goldbelly.com/restaurants/king-david-tacos/">Ship Nationwide</a></li>
+            <li><a href="/giftcards">Gift Cards</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <ul>
+            <li><a href="/611bergen">611 Bergen St</a></li>
+            <li><a href="/tacocarts">Taco Carts</a></li>
+            <li><a href="/kdtlga">KDT @ LGA</a></li>
+            <li><a href="/retailpartners">Retail Partners</a></li>
+            <li><a href="/press">Press</a></li>
+            <li><a href="/faqs">About + FAQs</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 King David Tacos. All rights reserved.</p>
+        <p>Made with ♥ in Brooklyn, NY</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hero bg parallax trigger
+    const heroBg = document.getElementById('heroBg');
+    setTimeout(() => heroBg.classList.add('loaded'), 100);
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = (i % 3) * 0.12 + 's';
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Newsletter
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'Thank you! 🌮';
+      btn.disabled = true;
+    }
+  </script>
+</body>
+</html>
